@@ -1,0 +1,2 @@
+# WebTechnologyCodes_GoogleLanguageTranslater
+Magento2 Google Language Translator extension 
