@@ -1,0 +1,98 @@
+<?php
+/**
+ * Web Technology Codes
+ * Web Technology Codes Google Language Translator Extension
+ * 
+ * @category   WebTechnologyCodes
+ * @package    WebTechnlogyCodes_GoogleLanguageTranslater
+ * @copyright  Copyright © 2018 Web Technology Codes (https://www.webtechnologycodes.com)
+ * @license    https://www.webtechnologycodes.com/magento-extension-license/
+ */
+$enabled = $this->getConfigValue('custom_translate_settings/general/active');
+
+if ($enabled) {
+    $selected = strtolower($this->getConfigValue('custom_translate_settings/general/selectlanguage'));
+    $layout = $this->getConfigValue('custom_translate_settings/general/selectlayout');
+    $snippetenabel = $this->getConfigValue('custom_translate_settings/general/enable_custom');
+    $snippet = $this->getConfigValue('custom_translate_settings/general/snippet');
+
+    if ($layout) {
+        $layouthtml = 'layout: google.translate.TranslateElement.InlineLayout.' . $layout;
+    } else {
+        $layouthtml = 'layout: google.translate.TranslateElement.InlineLayout.SIMPLE';
+    }
+    ?>
+    <div class="google-language-switcher">
+        <?php if ($snippetenabel && $snippet != "") {
+            ?>
+            <div class="form-language">
+                <?php echo $snippet; ?>
+            </div>
+        <?php
+        } else {
+        ?>
+            <div id="google-translate-element"></div>
+            <script type="text/javascript">
+                function googleTranslateElementInit()
+                {
+                    new google.translate.TranslateElement(
+                        {
+                            pageLanguage: 'en',
+                            includedLanguages: '<?php echo $selected; ?>',
+                            <?php echo $layouthtml; ?>
+                        },
+                        'google-translate-element');
+                }
+            </script>
+            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <?php }
+        ?>
+    </div>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            /*
+             * CUSTOMIZING GOOGLE TRANSLATOR
+             */
+            jQuery('#google-translate-element').on("click", function () {
+                // Change font family and color
+                jQuery("iframe").contents().find(".goog-te-menu2-item div, .goog-te-menu2-item:link div, .goog-te-menu2-item:visited div, .goog-te-menu2-item:active div,  .goog-te-menu2-item-selected div, .goog-te-menu2-item-selected:link div, .goog-te-menu2-item-selected:visited div, .goog-te-menu2-item-selected:hover div, .goog-te-menu2-item-selected:active div")
+                    .css({
+                        'background-color': '#ffffff',
+                        'color': '#000000',
+                        'text-transform': 'uppercase',
+                        'border-top': '1px solid #000',
+                        'padding': '8px 4px',
+                        'width':'148px'
+
+                    });
+
+
+                // Change hover effects
+                jQuery("iframe").contents().find(".goog-te-menu2-item div").hover(function () {
+                    jQuery(this).css('background-color', '#000000').find('span.text').css({'color': '#ffffff', 'background': '#000000'});
+                }, function () {
+                    jQuery(this).css('background-color', '#ffffff').find('span.text').css({'color': '#000000', 'background': '#ffffff'});
+                });
+
+                // Change Google's default blue border
+                jQuery("iframe").contents().find('.goog-te-menu2').css({
+                    'border': '1px solid #000',
+                    'background': 'none',
+                    'padding': '0px',
+                    'height':'auto !important',
+                    'width':'167px'
+                });
+
+                jQuery("iframe").contents().find('body').css({
+                    'overflow-y':'auto!important'
+                });
+
+            });
+        });
+    </script>
+	<style>
+		.google-language-switcher{max-width:350px;}
+	</style>
+    <?php
+}

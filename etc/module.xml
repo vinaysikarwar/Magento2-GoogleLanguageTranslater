@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Web Technology Codes
+ * Web Technology Codes Google Language Translator Extension
+ * 
+ * @category   WebTechnologyCodes
+ * @package    WebTechnlogyCodes_GoogleLanguageTranslater
+ * @copyright  Copyright © 2018 Web Technology Codes (https://www.webtechnologycodes.com)
+ * @license    https://www.webtechnologycodes.com/magento-extension-license/
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Module/etc/module.xsd">
+    <module name="WebTechnologyCodes_GoogleLanguageTranslater" setup_version="1.0.0" />
+</config>

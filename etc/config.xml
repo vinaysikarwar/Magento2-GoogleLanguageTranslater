@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Web Technology Codes
+ * Web Technology Codes Google Language Translator Extension
+ * 
+ * @category   WebTechnologyCodes
+ * @package    WebTechnlogyCodes_GoogleLanguageTranslater
+ * @copyright  Copyright © 2018 Web Technology Codes (https://www.webtechnologycodes.com)
+ * @license    https://www.webtechnologycodes.com/magento-extension-license/
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <custom_search_settings>
+            <general>
+                <active>1</active>   
+                <enable_custom>0</enable_custom>   
+                <selectlanguage>en</selectlanguage>   
+                <selectlayout>SIMPLE</selectlayout>
+            </general>
+        </custom_search_settings>
+    </default>
+</config>

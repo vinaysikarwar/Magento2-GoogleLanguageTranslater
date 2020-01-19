@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Web Technology Codes
+ * Web Technology Codes Google Language Translator Extension
+ * 
+ * @category   WebTechnologyCodes
+ * @package    WebTechnlogyCodes_GoogleLanguageTranslater
+ * @copyright  Copyright © 2018 Web Technology Codes (https://www.webtechnologycodes.com)
+ * @license    https://www.webtechnologycodes.com/magento-extension-license/
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <tab id="googleintegration" translate="label" sortOrder="110">
+            <label>Google Translate Integration</label>
+        </tab>
+        <section id="custom_translate_settings" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Configuration</label>
+            <tab>googleintegration</tab>
+            <resource>Solwin_GoogleLanguageTranslate::configuration</resource>
+            <group id="general" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Language Integration Settings]]></label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Enabled]]></label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Enable google language translate integration in your site.]]></comment>
+                </field>
+                <field id="enable_custom" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Include Your Custom Code?]]></label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Include your custom google language translate code.]]></comment>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="snippet" translate="label" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Custom Code]]></label>
+                    <comment><![CDATA[To replace custom script with your script]]></comment>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="enable_custom">1</field>
+                    </depends>
+                </field>
+                <field id="selectlayout" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Select Layout of Custom Dropdown]]></label>
+                    <source_model>WebTechnologyCodes\GoogleLanguageTranslater\Model\Source\Layout</source_model>
+                    <comment><![CDATA[Layout for google language translate dropdown. ie. Simple, Vertical or Horizontal layout]]></comment>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="enable_custom">0</field>
+                    </depends>
+                </field>
+                <field id="selectlanguage" translate="label" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Select Language]]></label>
+                    <source_model>WebTechnologyCodes\GoogleLanguageTranslater\Model\Source\Languages</source_model>
+                    <comment><![CDATA[Select language that you want to display in google language translate dropdown.]]></comment>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="enable_custom">0</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

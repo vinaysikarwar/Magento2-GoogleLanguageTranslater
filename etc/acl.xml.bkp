@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Web Technology Codes
+ * Web Technology Codes Google Language Translator Extension
+ * 
+ * @category   WebTechnologyCodes
+ * @package    WebTechnlogyCodes_GoogleLanguageTranslater
+ * @copyright  Copyright © 2018 Web Technology Codes (https://www.webtechnologycodes.com)
+ * @license    https://www.webtechnologycodes.com/magento-extension-license/
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="WebTechnologyCodes_GoogleLanguageTranslater::extension">
+                    <resource id="WebTechnologyCodes_GoogleLanguageTranslater::view" title="Google Custom Search Integration" sortOrder="200" />
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="WebTechnologyCodes_GoogleLanguageTranslater::settings" title="Google Translate Integration Section" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

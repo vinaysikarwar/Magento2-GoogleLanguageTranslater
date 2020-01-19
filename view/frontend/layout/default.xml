@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Web Technology Codes
+ * Web Technology Codes Google Language Translator Extension
+ * 
+ * @category   WebTechnologyCodes
+ * @package    WebTechnlogyCodes_GoogleLanguageTranslater
+ * @copyright  Copyright © 2018 Web Technology Codes (https://www.webtechnologycodes.com)
+ * @license    https://www.webtechnologycodes.com/magento-extension-license/
+*/
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.panel">
+            <block class="WebTechnologyCodes\GoogleLanguageTranslater\Block\Index" name="magento_store_language" template="WebTechnologyCodes_GoogleLanguageTranslater::index.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

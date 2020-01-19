@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Web Technology Codes
+ * Web Technology Codes Google Language Translator Extension
+ * 
+ * @category   WebTechnologyCodes
+ * @package    WebTechnlogyCodes_GoogleLanguageTranslater
+ * @copyright  Copyright © 2018 Web Technology Codes (https://www.webtechnologycodes.com)
+ * @license    https://www.webtechnologycodes.com/magento-extension-license/
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="WebTechnologyCodes_GoogleLanguageTranslater::view" title="Google Translate Integration" module="WebTechnologyCodes_GoogleLanguageTranslater" sortOrder="10" parent="WebTechnologyCodes_GoogleLanguageTranslater::extension" resource="WebTechnologyCodes_GoogleLanguageTranslater::view"/>
+        <add id="WebTechnologyCodes_GoogleLanguageTranslater::settings" title="Configuration" module="WebTechnologyCodes_GoogleLanguageTranslater" sortOrder="10" parent="WebTechnologyCodes_GoogleLanguageTranslater::view" action="adminhtml/system_config/edit/section/custom_translate_settings" resource="WebTechnologyCodes_GoogleLanguageTranslater::settings"/>
+        <add id="WebTechnologyCodes_GoogleLanguageTranslater::extension" title="Solwin" module="WebTechnologyCodes_GoogleLanguageTranslater" sortOrder="65" resource="WebTechnologyCodes_GoogleLanguageTranslater::extension" />
+    </menu>
+</config>
